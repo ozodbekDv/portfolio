@@ -1,5 +1,5 @@
 // components
-import { Socials } from "../components";
+import { Socials, Photo } from "../components";
 
 // shadcn
 import { Button } from "../components/ui/button";
@@ -10,11 +10,11 @@ import { FiDownload } from "react-icons/fi";
 function Home() {
   return (
     <section className="h-full">
-      <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+      <div className="flex flex-col items-center justify-between xl:flex-row xl:pt-8 xl:pb-24">
         {/* Text */}
-        <div className="text-center xl:text-left">
+        <div className="order-2 text-center xl:text-left xl:order-none">
           <span className="text-xl">Software Developer</span>
-          <h1 className="h1 mb-6">
+          <h1 className="mb-6 h1">
             Hello I'm <br />{" "}
             <span className="text-[#00ff99]">Ozodbek Tursunaliyev</span>
           </h1>
@@ -23,11 +23,11 @@ function Home() {
             in various programming languages and technologies.
           </p>
           {/* Btn and socials */}
-          <div className="flex flex-col xl:flex-row items-center gap-8">
+          <div className="flex flex-col items-center gap-8 xl:flex-row">
             <Button
               variant="outline"
               size="lg"
-              className="flex uppercase items-center gap-2"
+              className="flex items-center gap-2 uppercase"
             >
               <span>Download CV</span>
               <FiDownload className="text-xl" />
@@ -41,7 +41,9 @@ function Home() {
           </div>
         </div>
         {/* Photo */}
-        <div>photo</div>
+        <div className="order-1 mb-8  xl:order-none">
+          <Photo />
+        </div>
       </div>
     </section>
   );

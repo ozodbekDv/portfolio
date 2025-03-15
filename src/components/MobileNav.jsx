@@ -30,12 +30,12 @@ function MobileNav() {
   const location = useLocation();
   return (
     <Sheet className="p-10">
-      <SheetTrigger className="flex justify-center items-center">
+      <SheetTrigger className="flex items-center justify-center">
         <CiMenuFries className="text-[32px] text-[#00ff99] " />
       </SheetTrigger>
       <SheetContent className="flex flex-col">
         {/* Logo */}
-        <div className="mt-32 mb-40 text-center text-2xl">
+        <div className="mt-32 mb-40 text-2xl text-center">
           <Link to="/">
             <h1 className="text-4xl font-semibold">
               Ozodbek<span className="text-[#00ff99]">.</span>
@@ -43,12 +43,12 @@ function MobileNav() {
           </Link>
         </div>
         {/* Nav */}
-        <nav className="flex flex-col justify-center items-center gap-8">
+        <nav className="flex flex-col items-center justify-center gap-8">
           {links.map((link, index) => {
             return (
               <Link
                 to={link.path}
-                key={link.index}
+                key={index}
                 className={`${
                   link.path == location.pathname &&
                   "text-[#00ff99] border-b-2 border-[#00ff99]"
