@@ -1,5 +1,5 @@
 // router-dom
-import { Link,useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Nav() {
   const location = useLocation();
@@ -13,7 +13,15 @@ function Nav() {
       >
         Home
       </Link>
-
+      <Link
+        to="/services"
+        className={`${
+          location.pathname == "/services" &&
+          "text-[#00ff99] border-b-2 border-[#00ff99]"
+        } font-medium capitalize hover:text-[#00ff99] transition-all`}
+      >
+        Services
+      </Link>
       <Link
         to="/resume"
         className={`${
@@ -32,15 +40,7 @@ function Nav() {
       >
         Work
       </Link>
-      <Link
-        to="/services"
-        className={`${
-          location.pathname == "/services" &&
-          "text-[#00ff99] border-b-2 border-[#00ff99]"
-        } font-medium capitalize hover:text-[#00ff99] transition-all`}
-      >
-        Services
-      </Link>
+
       <Link
         to="/contact"
         className={`${
