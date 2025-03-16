@@ -1,5 +1,5 @@
 // components
-import { Socials, Photo } from "../components";
+import { Socials, Photo, Stats } from "../components";
 
 // shadcn
 import { Button } from "../components/ui/button";
@@ -41,10 +41,12 @@ function Home() {
           </div>
         </div>
         {/* Photo */}
-        <div className="order-1 mb-8  xl:order-none">
+        <div className="order-1 mb-8 xl:order-none">
           <Photo />
         </div>
       </div>
+
+      <Stats />
     </section>
   );
 }

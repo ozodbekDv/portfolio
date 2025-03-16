@@ -1,3 +1,4 @@
+// framer-motion
 import { AnimatePresence, motion } from "framer-motion";
 
 // variants
@@ -31,7 +32,7 @@ function Stairs() {
                 ease: "easeInOut",
                 delay: reverseIndex(index),
               }}
-              className="h-full w-full bg-white relative"
+              className="relative w-full h-full bg-white"
             ></motion.div>
           );
         })}

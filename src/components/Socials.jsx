@@ -1,4 +1,7 @@
+// router-dom
 import { Link } from "react-router-dom";
+
+// react-icons
 import { FaGithub, FaLinkedin, FaTelegram, FaYoutube } from "react-icons/fa";
 
 const socialIcons = [
