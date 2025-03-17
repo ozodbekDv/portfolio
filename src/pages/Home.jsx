@@ -10,7 +10,7 @@ import { FiDownload } from "react-icons/fi";
 function Home() {
   return (
     <section className="h-full">
-      <div className="flex flex-col items-center justify-between xl:flex-row xl:pt-8 xl:pb-24">
+      <div className="flex flex-col items-center justify-between xl:flex-row xl:pt-4 xl:pb-4">
         {/* Text */}
         <div className="order-2 text-center xl:text-left xl:order-none">
           <span className="text-xl">Software Developer</span>
