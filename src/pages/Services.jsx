@@ -41,12 +41,12 @@ const services = [
 
 function Services() {
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
+    <section className="min-h-[70vh] flex flex-col justify-center py-12 xl:py-0">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+          transition: { delay: 0.4, duration: 0.4, ease: "easeIn" },
         }}
         className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
       >
@@ -58,17 +58,22 @@ function Services() {
             >
               {/* Top */}
               <div className="flex items-center justify-between w-full">
-                <div className="text-5xl font-extrabold text-transparent transition-all duration-500 text-outline group-hover:text-outline-hover ">
+                <div className="text-4xl font-extrabold text-transparent transition-all duration-500 text-outline group-hover:text-outline-hover">
                   {service.num}
                 </div>
-                <Link to={service.href}>
-                  <BsArrowDownRight />
+                <Link
+                  className="w-[60px] h-[60px] rounded-full leading-none bg-white group-hover:bg-[#00ff99] transition-all duration-500 flex justify-center items-center hover:-rotate-45"
+                  to={service.href}
+                >
+                  <BsArrowDownRight className="text-3xl text-primary" />
                 </Link>
               </div>
               {/* heading */}
-              <h2>{service.title}</h2>
+              <h2 className="text-white text-[35px] font-bold leading-none group-hover:text-[#00ff99] transition-all duration-500">
+                {service.title}
+              </h2>
               {/* describtion */}
-              <p>{service.describtion}</p>
+              <p className="text-white/60 text-[14px]">{service.describtion}</p>
               {/* border */}
               <div className="w-full border-b border-white/20"></div>
             </div>
