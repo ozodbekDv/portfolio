@@ -87,8 +87,67 @@ const education = {
   ],
 };
 
+// skills data
+const skills = {
+  title: "My skills",
+  describtion: "lorem ipsum dolor te, core impack new. New oslo allow bette.",
+  skillsList: [
+    { icons: <FaHtml5 />, name: "html" },
+    { icons: <FaCss3 />, name: "css" },
+    { icons: <FaJs />, name: "javasript" },
+    { icons: <FaReact />, name: "react.js" },
+    { icons: <SiNextdotjs />, name: "next.js" },
+    { icons: <SiTailwindcss />, name: "tailwind.css" },
+    { icons: <FaNodeJs />, name: "node.js" },
+    { icons: <FaFigma />, name: "figma" },
+  ],
+};
+
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../components/ui/tabs";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../components/ui/tooltip";
+import { ScrollArea } from "../components/ui/scroll-area";
+import { motion } from "framer-motion";
+
 function Resume() {
-  return <div>Resume</div>;
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+      }}
+      className="min-h-[80vh] flex items-center justify-center py-12 xl:px-0"
+    >
+      <div className="container mx-auto">
+        <Tabs
+          defaultValue="experience"
+          className="flex-col felx xl:flex-row gap-[60px]"
+        >
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+            <TabsTrigger value="experience">Experience</TabsTrigger>
+            <TabsTrigger value="education">Education</TabsTrigger>
+            <TabsTrigger value="skills">Skills</TabsTrigger>
+            <TabsTrigger value="about">About me</TabsTrigger>
+          </TabsList>
+
+          {/* Content */}
+          <div className="min-h-[70vh] w-full ">
+            <TabsContent value="experience" className="w-full"></TabsContent>
+          </div>
+        </Tabs>
+      </div>
+    </motion.div>
+  );
 }
 
 export default Resume;
