@@ -92,14 +92,14 @@ const skills = {
   title: "My skills",
   describtion: "lorem ipsum dolor te, core impack new. New oslo allow bette.",
   skillsList: [
-    { icons: <FaHtml5 />, name: "html" },
-    { icons: <FaCss3 />, name: "css" },
-    { icons: <FaJs />, name: "javasript" },
-    { icons: <FaReact />, name: "react.js" },
-    { icons: <SiNextdotjs />, name: "next.js" },
-    { icons: <SiTailwindcss />, name: "tailwind.css" },
-    { icons: <FaNodeJs />, name: "node.js" },
-    { icons: <FaFigma />, name: "figma" },
+    { icon: <FaHtml5 />, name: "html" },
+    { icon: <FaCss3 />, name: "css" },
+    { icon: <FaJs />, name: "javasript" },
+    { icon: <FaReact />, name: "react.js" },
+    { icon: <SiNextdotjs />, name: "next.js" },
+    { icon: <SiTailwindcss />, name: "tailwind.css" },
+    { icon: <FaNodeJs />, name: "node.js" },
+    { icon: <FaFigma />, name: "figma" },
   ],
 };
 
@@ -126,7 +126,7 @@ function Resume() {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:px-0"
+      className="min-h-[70vh] flex items-center justify-center py-10 xl:px-0"
     >
       <div className="container mx-auto">
         <Tabs
@@ -175,14 +175,73 @@ function Resume() {
                 </ScrollArea>
               </div>
             </TabsContent>
+
             {/* education */}
             <TabsContent value="education" className="w-full">
-              education
+              <div className="flex flex-col text-center gap-[30px] xl:text-left">
+                <h3 className="text-4xl font-bold">{education.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {education.describtion}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {education.items.map((item, index) => {
+                      return (
+                        <li
+                          key={index}
+                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        >
+                          <span className="text-[#00ff99] ">
+                            {item.duration}
+                          </span>
+                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                            {item.degree}
+                          </h3>
+                          <div className="flex items-center gap-3 ">
+                            {/* dot */}
+                            <span className="w-[6px] h-[6px] rounded-full bg-[#00ff99]"></span>
+                            <p className="text-white/60">{item.institution}</p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
             </TabsContent>
+
             {/* skills */}
-            <TabsContent value="skills" className="w-full">
-              skills
+            <TabsContent value="skills" className="w-full h-full">
+              <div className="flex flex-col gap-[30px]">
+                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <p className="max-w-[550px] text-white/60 mx-auto xl:mx-0">
+                    {skills.describtion}
+                  </p>
+                </div>
+                <ul className="grid grid-cols-2 md:grid-cols-4 sm:grid-cols-3 xl:gap-[30px]">
+                  {skills.skillsList.map((skill, index) => {
+                    return (
+                      <li key={index}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger>
+                              <div className="text-6xl group-hover:text-[#00ff99] transition-all duration-300">
+                                {skill.icon}
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
+
             {/* about */}
             <TabsContent value="about" className="w-full">
               about
