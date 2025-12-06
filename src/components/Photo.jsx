@@ -18,7 +18,7 @@ function Photo() {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
           }}
-          className="w-[298px] h-[298px] xl:w-[450px] xl:h-[450px] mix-blend-lighten absolute"
+          className="w-[298px]  mt-20 h-[298px] xl:w-[450px] xl:h-[450px] mix-blend-lighten absolute"
         >
           <img src="./assets/photo.png" className="object-contain" />
         </motion.div>
