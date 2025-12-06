@@ -7,7 +7,6 @@ import { Button } from "../components/ui/button";
 // react-icons
 import { FiDownload } from "react-icons/fi";
 
-// others
 import { Helmet } from "react-helmet";
 
 function Home() {
