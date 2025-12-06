@@ -7,9 +7,49 @@ import { Button } from "../components/ui/button";
 // react-icons
 import { FiDownload } from "react-icons/fi";
 
+// others
+import { Helmet } from "react-helmet";
+
 function Home() {
   return (
     <section className="h-full">
+      <Helmet>
+        <title>Ozodbek — Software Engineer Portfolio</title>
+        <meta
+          name="description"
+          content="Dasturchi portfolyosi, real loyihalar va skilllar."
+        />
+        <meta
+          property="og:title"
+          content="Ozodbek — Software Engineer Portfolio"
+        />
+        <meta
+          property="og:description"
+          content="Dasturchi portfolyosi, real loyihalar, skilllar."
+        />
+        <meta
+          property="og:image"
+          content="https://ozodbeks-portfolio.vercel.app/og-image.png"
+        />
+        <meta
+          property="og:url"
+          content="https://ozodbeks-portfolio.vercel.app"
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Ozodbek — Software Engineer Portfolio"
+        />
+        <meta
+          name="twitter:description"
+          content="Dasturchi portfolyosi, real loyihalar va skilllar."
+        />
+        <meta
+          name="twitter:image"
+          content="https://ozodbeks-portfolio.vercel.app/og-image.png"
+        />
+      </Helmet>
       <div className="flex flex-col items-center justify-between xl:flex-row xl:pt-4 xl:pb-4">
         {/* Text */}
         <div className="order-2 text-center xl:text-left xl:order-none">
